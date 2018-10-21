@@ -9,10 +9,10 @@ exports.url = require('./url')
  * @param {*} defaultValue - 如果没有找到对应的属性值，返回的默认值
  * @example
  * 
- * console.log(wt.get({a: {b: {c: {d: 3}}}}, 'a.b.c.d'), 5)
+ * wt.get({a: {b: {c: {d: 3}}}}, 'a.b.c.d', 5)
  * // => 3
  * 
- * console.log(wt.get({a: {b: {c: {d: 3}}}}, 'a.b.c.d.e.f'), 5)
+ * wt.get({a: {b: {c: {d: 3}}}}, 'a.b.c.d.e.f', 5)
  * // => 5
  */
 exports.get = (obj, propsPath, defaultValue) => {
