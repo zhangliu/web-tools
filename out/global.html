@@ -187,7 +187,7 @@
 
             
 
-            <td class="description last">属性路劲</td>
+            <td class="description last">属性路劲，例如：'a.b.c'</td>
         </tr>
 
     
@@ -280,11 +280,506 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>console.log(wt.get({a: {b: {c: {d: 3}}}}, 'a.b.c.d'), 5)
+    <pre class="prettyprint"><code>wt.get({a: {b: {c: 3}}}, 'a.b.c', 5)
 // => 3
 
-console.log(wt.get({a: {b: {c: {d: 3}}}}, 'a.b.c.d.e.f'), 5)
+wt.get({a: {b: {c: 3}}}, 'a.b.c.d.e', 5)
 // => 5</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="paramsify"><span class="type-signature"></span>paramsify<span class="signature">(obj)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    将 obj 变成 url 的参数化形式
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">参数化的对象，如果 obj 的属性也是对象，就对属性 JSON 化</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="url_index.js.html">url/index.js</a>, <a href="url_index.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>wt.url.paramsify({a: 3, b: 4, c: {d: 5}})
+// => a=3&amp;b=4&amp;c={"d":5}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="pick"><span class="type-signature"></span>pick<span class="signature">(obj, props)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    将 obj 对象里面的 props 属性挑选出来，组成一个数组
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">被挑选的对象</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>props</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">属性数组</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line67">line 67</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>wt.pick({a: 3, b: 'green', c: 4}, ['a', 'c'])
+// => {a: 3, c: 4}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="shrink"><span class="type-signature"></span>shrink<span class="signature">(obj, value, deep)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    将 obj 中值为 value 的属性剔除掉
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">需要剔除属性的对象</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">具有 value 值的属性将会被剔除掉, 默认值是 undefined</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>deep</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">保留字段，暂未使用</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line47">line 47</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>wt.shrink({a: 3, b: 4, c: undefined})
+// => {a: 3, b: 4}
+
+wt.shrink({a: 3, b: 4, c: undefined}, 4)
+// => {a: 3, c: undefined}</code></pre>
 
 
 
@@ -304,13 +799,13 @@ console.log(wt.get({a: {b: {c: {d: 3}}}}, 'a.b.c.d.e.f'), 5)
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#get">get</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#get">get</a></li><li><a href="global.html#paramsify">paramsify</a></li><li><a href="global.html#pick">pick</a></li><li><a href="global.html#shrink">shrink</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Oct 20 2018 21:53:39 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Oct 22 2018 09:38:14 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
