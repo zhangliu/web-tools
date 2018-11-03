@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: src/url/index.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,34 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: src/url/index.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * 将 obj 变成 url 的参数化形式
+ * @param {*} obj - 参数化的对象，如果 obj 的属性也是对象，就对属性 JSON 化
+ * 
+ * @example
+ * 
+ * wt.url.paramsify({a: 3, b: 4, c: {d: 5}})
+ * // => a=3&amp;b=4&amp;c={"d":5}
+ */
+exports.paramsify = obj => {
+    if (typeof obj !== 'object') return ''
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    return Object.keys(obj).map(key => {
+        if (typeof obj[key] === 'object') return `${key}=${JSON.stringify(obj[key])}`
+        return `${key}=${obj[key]}`
+    }).join('&amp;')
+}</code></pre>
+        </article>
+    </section>
 
 
 

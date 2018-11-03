@@ -1,6 +1,7 @@
-exports.json = require('./json')
-exports.time = require('./time')
-exports.url = require('./url')
+exports.json = require('./src/json')
+exports.time = require('./src/time')
+exports.url = require('./src/url')
+exports.run = require('./src/run')
 
 /**
  * 根据 propsPath 获取 obj 对象中相应的属性值
