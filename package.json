@@ -1,6 +1,6 @@
 {
   "name": "@zhangliu/web-tools",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,5 @@
   },
   "author": "zhangliu",
   "license": "ISC",
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
