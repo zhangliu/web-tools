@@ -395,7 +395,7 @@ wt.get({a: {b: {c: 3}}}, 'a.b.c.d.e', 5)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_url_index.js.html">src/url/index.js</a>, <a href="src_url_index.js.html#line10">line 10</a>
+        <a href="url_index.js.html">url/index.js</a>, <a href="url_index.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -735,7 +735,7 @@ wt.get({a: {b: {c: 3}}}, 'a.b.c.d.e', 5)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_run_index.js.html">src/run/index.js</a>, <a href="src_run_index.js.html#line11">line 11</a>
+        <a href="run_index.js.html">run/index.js</a>, <a href="run_index.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -766,6 +766,203 @@ wt.get({a: {b: {c: 3}}}, 'a.b.c.d.e', 5)
     
     <pre class="prettyprint"><code>// 尝试抓取百度的首页内容，如果失败就重试 3 次
 await wt.run.runTimes(fetch('www.baidu.com'), 3)</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="runTimes"><span class="type-signature">(async) </span>runTimes<span class="signature">(func, times, interval)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    多次执行某个函数，每次执行间隔 interval 毫秒
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>func</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">需要执行的函数</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>times</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    5
+                
+                </td>
+            
+
+            <td class="description last">执行的次数</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>interval</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">每次执行间隔毫秒数</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="run_index.js.html">run/index.js</a>, <a href="run_index.js.html#line46">line 46</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1066,7 +1263,7 @@ wt.shrink({a: 3, b: 4, c: undefined}, 4)
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_time_index.js.html">src/time/index.js</a>, <a href="src_time_index.js.html#line11">line 11</a>
+        <a href="time_index.js.html">time/index.js</a>, <a href="time_index.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -1230,7 +1427,7 @@ await wt.run.sleep(3000)</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_run_index.js.html">src/run/index.js</a>, <a href="src_run_index.js.html#line31">line 31</a>
+        <a href="run_index.js.html">run/index.js</a>, <a href="run_index.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -1280,13 +1477,13 @@ await wt.run.waitRun(fetch('www.baidu.com'), 5000)</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#get">get</a></li><li><a href="global.html#paramsify">paramsify</a></li><li><a href="global.html#pick">pick</a></li><li><a href="global.html#retryRun">retryRun</a></li><li><a href="global.html#shrink">shrink</a></li><li><a href="global.html#sleep">sleep</a></li><li><a href="global.html#waitRun">waitRun</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#get">get</a></li><li><a href="global.html#paramsify">paramsify</a></li><li><a href="global.html#pick">pick</a></li><li><a href="global.html#retryRun">retryRun</a></li><li><a href="global.html#runTimes">runTimes</a></li><li><a href="global.html#shrink">shrink</a></li><li><a href="global.html#sleep">sleep</a></li><li><a href="global.html#waitRun">waitRun</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Nov 03 2018 11:55:25 GMT+0800 (CST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Dec 11 2018 21:25:18 GMT+0800 (CST)
 </footer>
 
 <script> prettyPrint(); </script>
