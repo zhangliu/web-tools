@@ -1,17 +1,21 @@
+const {sleep} = require('../time/index')
+
 /**
  * 执行 func 函数，如果成功就返回，否则将会重试 times 次
  * @param {function} func - 需要执行的函数
  * @param {number} times - 重试的次数
+ * @param {number} interval - 每次执行需要等待的时间间隔
  * 
  * @example
  * 
  * // 尝试抓取百度的首页内容，如果失败就重试 3 次
  * await wt.run.runTimes(fetch('www.baidu.com'), 3)
  */
-const retryRun = async (func, times = 5) => {
+const retryRun = async (func, times = 5, interval = 0) => {
     let count = times || 5
     while (count--) {
         try {
+            if (interval > 0) await sleep(interval)
             return await func()
         } catch (err) {
             if (!count) throw err
@@ -36,6 +40,7 @@ const waitRun = async (func, timeout) => {
 }
 
 module.exports = {
-    runTimes,
-    runTimeout
+    retryRun,
+    waitRun,
+    runTimes
 }
