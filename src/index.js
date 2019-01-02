@@ -71,3 +71,5 @@ exports.pick = (obj, props) => {
     props.forEach(key => { result[key] = obj[key] })
     return result
 }
+
+window.webTools = exports
