@@ -15,3 +15,25 @@ exports.paramsify = obj => {
         return `${key}=${obj[key]}`
     }).join('&')
 }
+
+/**
+ * 解析url里面的hash
+ * @param {string} hash - 需要解析的hash字符串
+ * 
+ * @example
+ * 
+ * wt.url.parseHash('#/a/b/c?d=1&e=2')
+ * // => {path: '/a/b/c', params: {d: '1', e: '2'}}
+ */
+exports.parseHash = (hash) => {
+    if (typeof hash !== 'string') return {}
+    const path = hash.replace(/^#/, '').replace(/(&|\?).*$/, '')
+    const paramStr = hash.replace(/^#/, '').replace(/.*?(&|\?)(.*)$/, '$2')
+    const params = {}
+    paramStr.split('&').forEach(p => {
+        const arr = p.split('=')
+        if (arr.length < 2) return
+        params[arr[0]] = arr[1]
+    })
+    return {path, params}
+}
